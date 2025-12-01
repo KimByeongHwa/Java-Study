@@ -1,5 +1,9 @@
 package static2;
 
+//import static static2.DecoData.staticCall;
+
+import static static2.DecoData.staticCall;
+
 public class DecoDataMain {
     public static void main(String[] args) {
         System.out.println("1. 정적 호출");
@@ -14,5 +18,13 @@ public class DecoDataMain {
         data2.instanceCall();
 
         DecoData.staticCall(data1);
+
+        // 인스턴스를 통한 클래스 메소드 접근(Bad)
+        DecoData data3 = new DecoData();
+        data3.staticCall();
+
+        // 클래스를 통한 클래스 메소드 접근
+        DecoData.staticCall();
+        staticCall();
     }
 }
